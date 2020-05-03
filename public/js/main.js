@@ -1,7 +1,3 @@
-console.log("Well! :(")
-
-
-
 const weatherForm = document.querySelector('form')
 const searchElement = document.querySelector('input')
 const errorElement = document.querySelector('#error')

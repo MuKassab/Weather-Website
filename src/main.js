@@ -9,7 +9,6 @@ const forecast = require('./utils/forecast')
 const publicPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
-console.log(publicPath)
 
 const app = express()
 
@@ -50,17 +49,13 @@ app.get('/weather',(req, res) => {
                 error: error
             })
         }
-        // res.send({
-        //     City: name,
-        //     lon,
-        //     lat
-        // })
         forecast(lat, lon, (error, {temp:temperature, desc:description}) => {
             if(error){
                 return res.send({
                     error: error
                 })
             }
+
             res.send({
                 city: name,
                 temperature,
