@@ -6,7 +6,7 @@ const forcastElement = document.querySelector('#forecast')
 weatherForm.addEventListener('submit', e => {
     e.preventDefault()
     const location = searchElement.value
-    const query = 'http://localhost:3000/weather?address=' + location
+    const query = '/weather?address=' + location
     errorElement.textContent = 'Loading...'
     forcastElement.textContent = ''
     fetch(query).then( response => {
