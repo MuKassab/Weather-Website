@@ -23,17 +23,17 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 app.get('', (req, res) => {
-    res.render('index', {title: "Weather App", name: "Muhammad Kassab"})
+    res.render('index', {title: "Weather App", name: "MuKassab"})
 })
 
 app.get('/about', (req, res) => {
-    res.render('about', {title: 'About Me', name:"Muhammad Kassab"})
+    res.render('about', {title: 'About', name:"MuKassab"})
 })
 
 app.get('/help', (req, res) => {
-    res.render('help', {helpText: "Omg does it work?",
+    res.render('help', {helpText: "Just enter a location and watch the magic happen ;)",
         title: 'Help',
-        name: "Muhammad Kassab"})
+        name: "MuKassab"})
 })
 
 app.get('/weather',(req, res) => {
