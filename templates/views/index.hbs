@@ -11,10 +11,10 @@
         <div class="main-content">
             {{>header}}
             <form>
-                <input placeholder="Enter location"> <br>
-                <button>Search</button>
+                <input class="inputClass" placeholder="Enter location"> 
+                <input type="image" id="currentLocationBtn" src="/img/gps2.png"/ style="width:32px;height:32px;vertical-align:top;"> <br>
+                <button class="inputClass" id="searchBtn">Search</button>
             </form>      
-
             <p id='error'></p>
             <p id='forecast'></p>
         </div>

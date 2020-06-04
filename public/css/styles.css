@@ -55,7 +55,7 @@ button {
     color: white;
 }
 
-input {
+.inputClass {
     width: 200px;
     border: 2px solid rgb(255, 255, 255);
     padding: 4px;

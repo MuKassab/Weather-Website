@@ -20,6 +20,7 @@ app.use(express.static(publicPath))
 //Setup handlebars and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
+console.log(partialsPath)
 hbs.registerPartials(partialsPath)
 
 app.get('', (req, res) => {
@@ -64,6 +65,24 @@ app.get('/weather',(req, res) => {
                 description,
                 search:address
             })
+        })
+    })
+})
+
+app.get('/location', (req, res) => {
+    const lon = req.query.lon
+    const lat = req.query.lat
+    forecast(lat, lon, (error, {temp:temperature, desc:description, name}) => {
+        if(error){
+            return res.send({
+                error: error
+            })
+        }
+        res.send({
+            city: name,
+            temperature,
+            description,
+            //search:address
         })
     })
 })

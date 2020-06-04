@@ -15,12 +15,13 @@ request({
     }
 })*/
 
+
 const forecast = (lat, lon, callback) => {
     baseURL = "http://api.weatherstack.com/current?"
     token = "access_key=72674059ff60258eb90d2ce8f2fd0e69"
     query = util.format('&query=%s,%s', lat, lon)
     url = baseURL + token + query
-    //console.log(url)
+    console.log(url)
     request({
         url, json:true
     }, (error, response, body) => {
@@ -33,7 +34,8 @@ const forecast = (lat, lon, callback) => {
         } else {
             console.log("It's currently " + body.current.temperature + " Degrees out there. (" + body.current.weather_descriptions[0] +")." )
             callback(undefined, {temp: body.current.temperature,
-            desc: body.current.weather_descriptions[0]})
+            desc: body.current.weather_descriptions[0],
+            name: body.location.name + " - " + body.location.region + " - " + body.location.country})
         }
     })
 }
